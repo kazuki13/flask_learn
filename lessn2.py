@@ -1,3 +1,4 @@
+#url_forは、関数をurlに変換できる
 from flask import url_for
 from flask import Flask
 app = Flask(__name__)
@@ -13,7 +14,8 @@ def login():
 @app.route('/user/<username>')
 def profile(username):
     return f'{username}\'s profile'
-#リクエスト（訳注: HTTPなどの通信リクエスト）を処理しているかのように振る舞うよう伝えます。
+#リクエスト（訳注: HTTPなどの通信リクエスト）を処理しているかのように振る舞うよう伝えます
+#test_request_context使えるURLの表示
 with app.test_request_context():
     print(url_for('index'))
     print(url_for('login'))
